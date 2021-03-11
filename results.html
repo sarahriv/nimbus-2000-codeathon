@@ -21,10 +21,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+          <a class="nav-link" href="/index.html">Home</a>
         </li>
       </ul>
     </div>
@@ -37,7 +34,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-sm">Zip code</span>
       </div>
-      <input type="text" class="form-control" aria-label="Zipcode" aria-describedby="inputGroup-sizing-sm">
+      <input type="text" class="form-control" aria-label="Zipcode" aria-describedby="inputGroup-sizing-sm" maxlength="10">
     </div>
 	 </div>
 
@@ -56,13 +53,31 @@
 		
 		var mySites = sitestring.filter(s => s.zipcode = zip);
 });*/
-	const mySites = [{locationID:1,
+	const mySites = [
+	
+	{locationID:1,
+	zipcode:"01234",
 name:"CVS",
 availability:"M-F",
 hours:"8-5",
 phone:"214-456-4875"
 },{
 locationID:2,
+zipcode:"01234",
+name:"CVS 2",
+availability:"M-F",
+hours:"8-5",
+phone:"214-456-4875"
+}
+	{locationID:1,
+	zipcode:"01234",
+name:"CVS",
+availability:"M-F",
+hours:"8-5",
+phone:"214-456-4875"
+},{
+locationID:2,
+zipcode:"01234",
 name:"CVS 2",
 availability:"M-F",
 hours:"8-5",
