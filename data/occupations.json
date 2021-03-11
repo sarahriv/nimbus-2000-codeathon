@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Teacher",
+        "valid": true
+    },
+    {
+        "title": "First Responder",
+        "valid": true
+    },
+    {
+        "title": "Healthcare Worker",
+        "valid": true
+    },
+    {
+        "title": "Retail Worker",
+        "valid": false
+    },
+    {
+        "title": "Teacher",
+        "valid": true
+    }
+]
