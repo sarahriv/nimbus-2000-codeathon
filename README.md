@@ -13,5 +13,6 @@ This page will require the user to input thier age, occupation, and if they have
 
 
 Results Page
+
 This page will only appear if the user is eligible to obtain the vaccine.  The user will be prompted to input thier zip code which will result in an AJAX call to obtain the locations in thier area.  The list of locations will include location, available days, hours of operation and phone number.
 
