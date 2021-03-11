@@ -51,9 +51,10 @@
 
     function CreateTableFromJSON() {
 const zip = document.getElementById('zip').value;
+var sites;
     $.getJSON("data/locations.json", function(json) {
     console.log(json); // this will show the info it in firebug console
-	//var sites = JSON.parse(json);
+	sites = JSON.parse(json);
 		
 		
 });
@@ -90,7 +91,8 @@ availability:"M-F",
 hours:"8-5",
 phone:"214-456-4875"
 }	];*/
-/*var mySites = sites.filter(s => s.zipcode === zip);
+
+var mySites = sites.filter(s => s.zipcode === zip);
         // EXTRACT VALUE FOR HTML HEADER. 
 
         var col = [];
@@ -129,8 +131,9 @@ phone:"214-456-4875"
         // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
         var divContainer = document.getElementById("showData");
         divContainer.innerHTML = "";
-        divContainer.appendChild(table);*/
+        divContainer.appendChild(table);
     }
+	
 </script>
  <!-- JQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
