@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	  <!-- Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+ 
+<link rel="stylesheet" href="css/styles.css"></link>
+<script type="text/javascript" src="js/scripts.js"></script>
+
+
+  </head>
+    <body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">COVID Vaccine Eligibility & Location Portal</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/index.html">Home</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+	  <div class="container">
+     <h1>COVID Vaccine Eligibility & Location Portal</h1>
+	 <div class="row">
+	 <div class="col-6">
+
+	    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Zip code</span>
+      </div>
+      <input id="zip" type="text" class="form-control" aria-label="Zipcode" aria-describedby="inputGroup-sizing-sm" maxlength="5" required="true">
+    </div>
+
+
+	    <button type="submit" onclick="CreateTableFromJSON()" class="btn btn-primary">Search</button>
+</div>
+</div>
+
+    <p id="showData"></p>
+
+	</div>
+	<script type="text/javascript">
+	
+
+    function CreateTableFromJSON() {
+const zipcode = document.getElementById('zip').value;
+
+
+
+const sites = 
+	
+[
+    {"zip": "06103" ,"Location": "CVS: 777 Main Street", "availability": "Monday - Friday", "hours": "8-5", "phone": "860-544-9424"},
+    {"zip": "06106" ,"Location": "Walgreens: 161 Washington St", "availability": "Monday - Friday", "hours": "8-5", "phone": "860-522-5005"},
+    {"zip": "06112" ,"Location": "Walgreens: 1291 Albany Ave", "availability": "Monday - Friday", "hours": "8-5", "phone": "860-560-1881"},
+    {"zip": "06114" ,"Location": "Walgreens: 690 Wethersfield Ave", "availability": "Monday - Friday", "hours": "8-5", "phone": "860-296-1155"}
+  
+  ];
+
+var mySites = sites.filter(s => s.zip === zipcode);
+        // EXTRACT VALUE FOR HTML HEADER. 
+
+        var col = [];
+        for (var i = 0; i < mySites.length; i++) {
+            for (var key in mySites[i]) {
+                if (col.indexOf(key) === -1) {
+                    col.push(key);
+                }
+            }
+        }
+
+        // CREATE DYNAMIC TABLE.
+        var table = document.createElement("table");
+
+        // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+
+        var tr = table.insertRow(-1);                   // TABLE ROW.
+
+        for (var i = 0; i < col.length; i++) {
+            var th = document.createElement("th");      // TABLE HEADER.
+            th.innerHTML = col[i];
+            tr.appendChild(th);
+        }
+
+        // ADD JSON DATA TO THE TABLE AS ROWS.
+        for (var i = 0; i < mySites.length; i++) {
+
+            tr = table.insertRow(-1);
+
+            for (var j = 0; j < col.length; j++) {
+                var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = mySites[i][col[j]];
+            }
+        }
+
+        // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+        var divContainer = document.getElementById("showData");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
+    }
+	
+</script>
+ <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"  crossorigin="anonymous">
+    </script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+    </body>
+	
+</html>
