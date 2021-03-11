@@ -53,9 +53,9 @@
 const zip = document.getElementById('zip').value;
 var sites;
     $.getJSON("data/locations.json", function(json) {
-    console.log(json); // this will show the info it in firebug console
+   // console.log(json); // this will show the info it in firebug console
 	sites = JSON.parse(json);
-		
+		console.log(sites);
 		
 });
 
@@ -92,7 +92,7 @@ hours:"8-5",
 phone:"214-456-4875"
 }	];*/
 
-var mySites = sites.filter(s => s.zipcode === zip);
+var mySites = sites.filter(s => s.zip === zip);
         // EXTRACT VALUE FOR HTML HEADER. 
 
         var col = [];
