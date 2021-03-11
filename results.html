@@ -20,14 +20,25 @@
 	
 	<script type="text/javascript">
     function CreateTableFromJSON() {
-const zip = document.getElementById('zip').value;
+/*const zip = document.getElementById('zip').value;
     $.getJSON("data/locations.json", function(json) {
     console.log(json); // this will show the info it in firebug console
 	var sitestring = JSON.parse(json);
 		
 		var mySites = sitestring.filter(s => s.zipcode = zip);
-});
-		
+});*/
+	const mySites = [{locationID:1,
+name:"CVS",
+availability:"M-F",
+hours:"8-5",
+phone:"214-456-4875"
+},{
+locationID:2,
+name:"CVS 2",
+availability:"M-F",
+hours:"8-5",
+phone:"214-456-4875"
+}	]
 
         // EXTRACT VALUE FOR HTML HEADER. 
 
