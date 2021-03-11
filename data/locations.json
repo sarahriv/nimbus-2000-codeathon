@@ -1,0 +1,16 @@
+[
+zipcode:'01234',
+locations:{
+locationID:1,
+name:"CVS",
+availability:"M-F",
+hours:"8-5",
+phone:"214-456-4875"
+},{
+locationID:2,
+name:"CVS 2",
+availability:"M-F",
+hours:"8-5",
+phone:"214-456-4875"
+},
+]
