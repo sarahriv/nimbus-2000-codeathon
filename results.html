@@ -47,15 +47,19 @@
 
 	</div>
 	<script type="text/javascript">
+	
+
     function CreateTableFromJSON() {
 const zip = document.getElementById('zip').value;
-   /* $.getJSON("data/locations.json", function(json) {
+    $.getJSON("data/locations.json", function(json) {
     console.log(json); // this will show the info it in firebug console
-	var sitestring = JSON.parse(json);
+	//var sites = JSON.parse(json);
 		
 		
-});*/
-	const sites = [
+});
+
+
+/*	const sites = [
 	
 	{locationID:1,
 	zipcode:"01234",
@@ -85,8 +89,8 @@ name:"CVS 4",
 availability:"M-F",
 hours:"8-5",
 phone:"214-456-4875"
-}	];
-var mySites = sites.filter(s => s.zipcode === zip);
+}	];*/
+/*var mySites = sites.filter(s => s.zipcode === zip);
         // EXTRACT VALUE FOR HTML HEADER. 
 
         var col = [];
@@ -125,7 +129,7 @@ var mySites = sites.filter(s => s.zipcode === zip);
         // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
         var divContainer = document.getElementById("showData");
         divContainer.innerHTML = "";
-        divContainer.appendChild(table);
+        divContainer.appendChild(table);*/
     }
 </script>
  <!-- JQuery -->
