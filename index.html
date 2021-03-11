@@ -6,7 +6,12 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="css/styles.css"></link>
+  <!-- HIG UX CDN Kit Link
+      <link href="https://s0.hfdstatic.com/sites/higux/dist/css/scoped.min.css" rel="stylesheet">
+      -->
+
+  <link rel="stylesheet" href="css/styles.css">
+  </link>
 
   <script type="text/javascript" src="js/scripts.js"></script>
 
@@ -14,7 +19,6 @@
 
 <body>
 
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">COVID Vaccine Eligibility & Location Portal</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -24,82 +28,104 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
         </li>
       </ul>
     </div>
   </nav>
 
   <div class="container">
+    <!-- Content here -->
 
-    <!-- Jumbotron -->
+
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-4">COVID Vaccine Eligibility & Location Portal</h1>
-        <p class="lead">Enter in your age along with your occupation to see if you are eligible to receive a COVID-19 vaccination</p>
+        <p class="lead">Enter in your Date of Birth along with your Occupation to see if you are eligible to receive a
+          Covid-19 vaccination</p>
       </div>
     </div>
 
     <!-- Input box for age -->
-    <div class="input-group input-group-sm mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-sm">Age</span>
-      </div>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-    </div>
-
-    <!-- check box for underlying medical conditions -->
-    <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check this box if you have an underlying medical
-        condition</label>
-    </div>
-
-    <br>
 
     <div class="row">
-
-      <div class="col-sm-1">
-        Occupation:
-      </div>
-
-      <!-- Occupation Drop Down -->
-      <div class="dropdown col-sm-1">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          Select One
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Teacher</a>
-          <a class="dropdown-item" href="#">First Responder</a>
-          <a class="dropdown-item" href="#">Healthcare Worker</a>
-          <a class="dropdown-item" href="#">Retail Worker</a>
-          <a class="dropdown-item" href="#">Other</a>
+      <div class="col-6">
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Age</span>
+          </div>
+          <input type="text" class="form-control " aria-label="Sizing example input"
+            aria-describedby="inputGroup-sizing-sm">
         </div>
       </div>
     </div>
 
-    <br>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
 
-  </div>
+    <!-- check box for underlying medical conditions -->
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check this box if you have an underlying medical
+            condition</label>
+        </div>
+      </div>
+    </div>
 
-  <!-- JQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
-    </script>
 
-  <!-- Popper JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"  crossorigin="anonymous">
-    </script>
 
-  <!-- Bootstrap -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-    </script>
+      <div class="row">
+        <div class="col-6">
+          <p>Occupation: </p>
 
+          <!-- Occupation Drop Down -->
+          
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <select class="form-select" id="occupationsDdl" aria-label="Default select example">
+            <option selected value="-1">Select One</option>
+    
+          </select>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-6">
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+        </div>
+      </div>
+
+
+
+
+
+
+    </div>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+      </script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"  crossorigin="anonymous">
+      </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+      </script>
+    <script src="js/welcome.js"></script>
 </body>
 
 </html>
