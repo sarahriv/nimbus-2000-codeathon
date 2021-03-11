@@ -28,32 +28,34 @@
   </nav>
 	  <div class="container">
      <h1>COVID Vaccine Eligibility & Location Portal</h1>
-	 
+	 <div class="row">
+	 <div class="col-6">
 
 	    <div class="input-group input-group-sm mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-sm">Zip code</span>
       </div>
-      <input type="text" class="form-control" aria-label="Zipcode" aria-describedby="inputGroup-sizing-sm" maxlength="10">
+      <input id="zip" type="text" class="form-control" aria-label="Zipcode" aria-describedby="inputGroup-sizing-sm" maxlength="5" required="true">
     </div>
-	 </div>
+
 
 	    <button type="submit" onclick="CreateTableFromJSON()" class="btn btn-primary">Search</button>
-
+</div>
+</div>
 
     <p id="showData"></p>
 
 	</div>
 	<script type="text/javascript">
     function CreateTableFromJSON() {
-/*const zip = document.getElementById('zip').value;
-    $.getJSON("data/locations.json", function(json) {
+const zip = document.getElementById('zip').value;
+   /* $.getJSON("data/locations.json", function(json) {
     console.log(json); // this will show the info it in firebug console
 	var sitestring = JSON.parse(json);
 		
-		var mySites = sitestring.filter(s => s.zipcode = zip);
+		
 });*/
-	const mySites = [
+	const sites = [
 	
 	{locationID:1,
 	zipcode:"01234",
@@ -61,29 +63,30 @@ name:"CVS",
 availability:"M-F",
 hours:"8-5",
 phone:"214-456-4875"
-},{
+},
+{
 locationID:2,
 zipcode:"01234",
 name:"CVS 2",
 availability:"M-F",
 hours:"8-5",
 phone:"214-456-4875"
-}
-	{locationID:1,
-	zipcode:"01234",
-name:"CVS",
+},
+	{locationID:3,
+	zipcode:"01235",
+name:"CVS-3",
 availability:"M-F",
 hours:"8-5",
 phone:"214-456-4875"
 },{
-locationID:2,
-zipcode:"01234",
-name:"CVS 2",
+locationID:4,
+zipcode:"01235",
+name:"CVS 4",
 availability:"M-F",
 hours:"8-5",
 phone:"214-456-4875"
-}	]
-
+}	];
+var mySites = sites.filter(s => s.zipcode === zip);
         // EXTRACT VALUE FOR HTML HEADER. 
 
         var col = [];
