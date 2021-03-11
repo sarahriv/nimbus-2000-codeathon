@@ -1,11 +1,79 @@
 <!DOCTYPE html>
 <html>
     <head>
-<link rel="stylesheet" href="css/styles.css"></link>
-<script type="text/javascript" src="js/scripts.js"></script>
+      <!-- Bootstrap-->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+      
+      <!-- HIG UX CDN Kit Link
+      <link href="https://s0.hfdstatic.com/sites/higux/dist/css/scoped.min.css" rel="stylesheet">
+      -->
+
+      <link rel="stylesheet" href="css/styles.css"></link>
+
+      <script type="text/javascript" src="js/scripts.js"></script>
+
+      <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
   </head>
+
     <body>
-     <h1>Codeathon index page</h1>
-This will become our welcome page
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">COVID Vaccine Eligibility & Location Portal</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container">
+        <!-- Content here -->
+
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">COVID Vaccine Eligibility & Location Portal</h1>
+            <p class="lead">Enter in your Date of Birth along with your Occupation to see if you are eligible to receive a Covid-19 vaccination</p>
+          </div>
+        </div>
+
+        <p>Date Of Birth:</p>
+
+        <!-- Occupation Drop Down -->
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Occupation
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Teacher</a>
+            <a class="dropdown-item" href="#">First Responder</a>
+            <a class="dropdown-item" href="#">Healthcare Worker</a>
+            <a class="dropdown-item" href="#">Retail Worker</a>
+            <a class="dropdown-item" href="#">Other</a>
+          </div>
+        </div>
+
+
+
+
+
+
+        
+
+        
+      </div>
+
     </body>
+
 </html>
